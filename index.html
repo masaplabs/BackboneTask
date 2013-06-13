@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Backbone Tasks</title>
+    <script data-main="js/main" src="js/vendor/require.js"></script>
+    <style>
+        .completed{
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tasks</h1>
+
+    <!-- フォーム -->
+    <form action="" id="addTask">
+        <input type="text" id="new_task_title">
+        <input type="submit" value="add_task">
+        <span id="error_message"></span>
+    </form>
+
+    <!-- タスク表示エリア -->
+    <div id="task_list"></div>
+
+    <!-- 残りタスク数 -->
+    <p>tasks left: <span id="task_count"></span></p>
+
+    <!-- テンプレート -->
+    <script type="text/template" id="task-template">
+        <input type="checkbox" class="toggle" <%= completed ? 'checked' : ''%>>
+        <span class="<%= completed ? 'completed' : ''%>"><%- title %></span>
+        
+        <span class="delete">[x]</span>
+    </script>
+</body>
+</html>
