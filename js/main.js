@@ -1,4 +1,5 @@
 'use strict'
+// コンフィグ
 requirejs.config({
     paths: {
         'jquery': 'vendor/jquery',
@@ -19,6 +20,7 @@ requirejs.config({
     urlArgs: 'bust=' + (new Date()).getTime()
 });
 
+// 起動 app.js
 require(['app'], function (App) {
     new App;
 });

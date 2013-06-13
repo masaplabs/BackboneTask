@@ -9,6 +9,9 @@
             text-decoration: line-through;
             color: gray;
         }
+        #error_message{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -16,9 +19,9 @@
 
     <!-- フォーム -->
     <form action="" id="addTask">
+        <span id="error_message"></span><br>
         <input type="text" id="new_task_title">
         <input type="submit" value="add_task">
-        <span id="error_message"></span>
     </form>
 
     <!-- タスク表示エリア -->

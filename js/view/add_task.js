@@ -30,8 +30,6 @@ define([
 
 			if (set_success) {
 				this.collection.add(task);
-				
-				$('#error').empty();
 			}
 		}
 	});

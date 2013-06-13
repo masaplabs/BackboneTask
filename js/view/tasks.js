@@ -27,7 +27,9 @@ define([
                 model: task
             });
 
-            this.$el.append(task_view.render().el);
+            task_view.render().$el.hide();
+            this.$el.append(task_view.render().$el);
+            task_view.render().$el.fadeIn();
 
             $('#new_task_title').val('').focus();
 
@@ -51,7 +53,7 @@ define([
 
                 this.$el.append(task_view.render().el);
             }, this);
-
+            
             $('#task_list').html(this.el);
 
             // 残りタスク数更新

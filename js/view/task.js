@@ -28,14 +28,16 @@ define(['backbone'], function () {
         },
         // タスクを削除する
         destroy: function () {
-            if (confirm('ok?')) {
+            if (confirm('本当に削除しますか？')) {
                 // モデルの削除をおこなう（initialize により View の remove も実行される）
                 this.model.destroy();
             }
         },
         // 表示上からタグを削除する
         remove: function () {
-            this.$el.remove();
+            this.$el.fadeOut(function () {
+                this.$el.remove();
+            });
         },
         // テンプレートの指定
         template: _.template($('#task-template').html()),
@@ -49,4 +51,4 @@ define(['backbone'], function () {
     });
 
     return TaskView;
-})
+});
